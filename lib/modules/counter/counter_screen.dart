@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:riverpod_view_model_example/counter_screen/counter_view_model.dart';
+import 'package:riverpod_view_model_example/modules/counter/counter_view_model.dart';
+import 'package:riverpod_view_model_example/widgets/drawer.dart';
 
 class CounterScreen extends HookConsumerWidget {
   @override
@@ -24,6 +25,7 @@ class _CounterScreen extends HookConsumerWidget {
     final viewModel = ref.watch(CounterViewModel.provider);
 
     return Scaffold(
+      drawer: AppDrawer(),
       appBar: AppBar(
         title: Text("Counter"),
       ),
